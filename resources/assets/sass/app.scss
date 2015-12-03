@@ -1,2 +1,22 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "/node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+body {
+  padding-top: 70px;
+
+}
+img {
+  max-width: 100%;
+}
+.gallery_image {
+  margin-bottom: 1em;
+}
+.flash_message {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: yellow;
+  font-weight: bold;
+}

@@ -8,6 +8,7 @@ use Foobooks\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+
 class AuthController extends Controller
 {
     /*
@@ -22,15 +23,18 @@ class AuthController extends Controller
     */
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    //where should the user be redirected to after logging in
+    protected $redirectPath = '/flyers/create';
+    //where should the user be redirected to if their login fails
+    protected $loginPath = '/auth/register';
+    //where should the user be redirected to after logging out
+    protected $redirectAfterLogout = '/';
 
-    /**
-     * Create a new authentication controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
+
+        parent::_construct();
     }
 
     /**
